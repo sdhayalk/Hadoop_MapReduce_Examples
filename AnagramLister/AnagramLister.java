@@ -41,7 +41,6 @@ public class AnagramLister	{
 
 		public void reduce(Text key, Iterable<Text> values, Context context) throws IOException, InterruptedException	{
 			HashSet<String> hashset = new HashSet<String>();
-			Iterator<String> iterator = hashset.iterator();
 			String resultString = "";
 			int count = 0;
 
@@ -50,8 +49,10 @@ public class AnagramLister	{
 				hashset.add(temp);
 			}
 
+			Iterator<String> iterator = hashset.iterator();
 			while(iterator.hasNext())	{
-				resultString = resultString + iterator.next() + ", ";
+				String temp = iterator.next();
+				resultString = resultString + temp + ", ";
 				count++;
 			}
 
