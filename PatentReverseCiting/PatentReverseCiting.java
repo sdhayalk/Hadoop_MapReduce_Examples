@@ -45,7 +45,7 @@ public class PatentReverseCiting	{
 	public static void main(String[] args) throws Exception {
 		Configuration conf = new Configuration();       // define a configuration
 	    Job job = Job.getInstance(conf, "PatentReverseCiting");  // define a job
-	    job.setJarByClass(WordCount.class);
+	    job.setJarByClass(PatentReverseCiting.class);
 	    job.setMapperClass(MapperClass.class);          // set the mapper to the job
 	    job.setCombinerClass(ReducerClass.class);       // does local aggregation
 	    job.setReducerClass(ReducerClass.class);        // set the reducer to the job
